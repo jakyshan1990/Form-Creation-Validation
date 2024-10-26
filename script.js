@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded",(event) => {
     const feedbackDiv=document.getElementById("form-feedback");
 
 let isVaild = true;
-let massages = [];
 
 
 
@@ -18,36 +17,33 @@ const email = document.getElementById ('email').value;
 const eminput = email.trim ();
 const password = document.getElementById ('password').value;
 const passinput = password.trim ();
-
+const massages=[];
 
 
         if(userinput.length<3){isVaild=false;
-            massages=["user name too low",...massages];
+            massages.push("user name too low");
         }
         if(eminput.includes("@"&&".")==false){
             isVaild=false;
-            massages=["missing @ or dot",...massages];
+            massages.push("missing @ or dot");
         }
         if(passinput.length<8){
             isVaild=false;
             massages.push("pass too low");
         }
 
-        display();
-    });
+feedbackDiv.style.display = 'block';
+if (isVaild == true) {
+  feedbackDiv.textContent = 'Registration successful!';
+  feedbackDiv.style.color = '#28a745';
+} else if (isVaild == false) {
+  massages.push ('<br>');
+  feedbackDiv.innerHTML = massages;
+  feedbackDiv.style.color = '#dc3545';
+}
+
+});
 
 
-    function display(){
-        feedbackDiv.style.display="block";
-        if(isVaild==true){
-            feedbackDiv.textContent="Registration successful!";
-            feedbackDiv.style.color="#28a745";
-        }
-        else if(isVaild==false){
-            massages=["<br>",...massages];
-            feedbackDiv.innerHTML=massages;
-            feedbackDiv.style.color="#dc3545";
-        }
 
-    }
 });
