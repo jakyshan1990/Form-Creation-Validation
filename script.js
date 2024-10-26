@@ -34,10 +34,10 @@ let isVaild = true;
         }
 
 feedbackDiv.style.display = 'block';
-if (isVaild == true) {
+if (isVaild === true) {
   feedbackDiv.textContent = 'Registration successful!';
   feedbackDiv.style.color = '#28a745';
-} else if (isVaild == false) {
+} else if (isVaild === false) {
   massages.push ('<br>');
   feedbackDiv.innerHTML = massages;
   feedbackDiv.style.color = '#dc3545';
