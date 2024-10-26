@@ -4,20 +4,21 @@ document.addEventListener("DOMContentLoaded",(event) => {
     const form=document.getElementById("registration-form");
     const feedbackDiv=document.getElementById("form-feedback");
 
-let isVaild = true;
+
 
 
 
     form.addEventListener("submit",function(event){
         event.preventDefault();
         
-        const username = document.getElementById ('username').value;
+const username = document.getElementById ('username').value;
 const userinput = username.trim ();
 const email = document.getElementById ('email').value;
 const eminput = email.trim ();
 const password = document.getElementById ('password').value;
 const passinput = password.trim ();
 const massages=[];
+let isVaild = true;
 
 
         if(userinput.length<3){isVaild=false;
