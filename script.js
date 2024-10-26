@@ -32,17 +32,20 @@ let massages = [];
             massages=["pass too low",...massages];
         }
 
-        feedbackDiv.style.display="block";
-        if(isVaild==true){
-            feedbackDiv.textContent="Registration successful!";
-            feedbackDiv.style.color="#28a745";
-        }
-        else if(isVaild==false){
-            massages=["<br>",...massages];
-            feedbackDiv.innerHTML=massages;
-            feedbackDiv.style.color="#dc3545";
-        }
-
+        display();
     });
 
+
+    function display(){
+        feedbackDiv.style.display = 'block';
+if (isVaild == true) {
+  feedbackDiv.textContent = 'Registration successful!';
+  feedbackDiv.style.color = '#28a745';
+} else if (isVaild == false) {
+  massages = ['<br>', ...massages];
+  feedbackDiv.innerHTML = massages;
+  feedbackDiv.style.color = '#dc3545';
+}
+
+    }
 });
