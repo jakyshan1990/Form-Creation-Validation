@@ -17,29 +17,29 @@ const email = document.getElementById ('email').value;
 const eminput = email.trim ();
 const password = document.getElementById ('password').value;
 const passinput = password.trim ();
-const massages=[];
-let isVaild = true;
+const messages=[];
+let isValid = true;
 
 
-        if(userinput.length<3){isVaild=false;
-            massages.push("user name too low");
+        if(userinput.length<3){isValid=false;
+            messages.push("user name too low");
         }
         if(eminput.includes("@"&&".")==false){
-            isVaild=false;
-            massages.push("missing @ or dot");
+            isValid=false;
+            messages.push("missing @ or dot");
         }
         if(passinput.length<8){
-            isVaild=false;
-            massages.push("pass too low");
+            isValid=false;
+            messages.push("pass too low");
         }
 
 feedbackDiv.style.display = 'block';
-if (isVaild === true) {
+if (isValid === true) {
   feedbackDiv.textContent = 'Registration successful!';
   feedbackDiv.style.color = '#28a745';
-} else if (isVaild === false) {
-  massages.push ('<br>');
-  feedbackDiv.innerHTML = massages;
+} else if (isValid === false) {
+  messages.push ('<br>');
+  feedbackDiv.innerHTML = messages;
   feedbackDiv.style.color = '#dc3545';
 }
 
