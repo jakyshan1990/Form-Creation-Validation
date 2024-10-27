@@ -11,24 +11,24 @@ document.addEventListener("DOMContentLoaded",(event) => {
     form.addEventListener("submit",function(event){
         event.preventDefault();
         
-const username = document.getElementById ('username').value;
-const userinput = username.trim ();
-const email = document.getElementById ('email').value;
-const eminput = email.trim ();
-const password = document.getElementById ('password').value;
-const passinput = password.trim ();
+const userinput = document.getElementById ('username').value;
+const username = userinput.trim ();
+const eminput = document.getElementById ('email').value;
+const email = eminput.trim ();
+const passinput = document.getElementById ('password').value;
+const password = passinput.trim ();
 const messages=[];
 let isValid = true;
 
 
-        if(userinput.length<3){isValid=false;
+        if(username.length<3){isValid=false;
             messages.push("user name too low");
         }
-        if(eminput.includes("@"&&".")==false){
+        if(email.includes("@"&&".")==false){
             isValid=false;
             messages.push("missing @ or dot");
         }
-        if(passinput.length<8){
+        if(password.length<8){
             isValid=false;
             messages.push("pass too low");
         }
