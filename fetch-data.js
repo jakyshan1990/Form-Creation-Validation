@@ -13,7 +13,7 @@ users.forEach(myfunction);
 function myfunction(item){
     const usr=document.createElement("li");
     usr.textContent=item;
-    userList.append(usr);
+    userList.appendChild(usr);
 } 
 
 dataContainer.append(userList);
