@@ -38,7 +38,7 @@ if (isValid === true) {
   feedbackDiv.textContent = 'Registration successful!';
   feedbackDiv.style.color = '#28a745';
 } else if (isValid === false) {
-  messages.push ('<br>');
+  messages.join ('<br>');
   feedbackDiv.innerHTML = messages;
   feedbackDiv.style.color = '#dc3545';
 }
